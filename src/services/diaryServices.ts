@@ -1,4 +1,4 @@
-import { DiaryEntry, newDiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
+import { DiaryEntry, NewDiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
 import diaryData from './diaries.json'
 
 // Asercion de tipos = obligar a TS a considerar que la constante diaryData tiene que funcionar de una forma
@@ -27,10 +27,10 @@ export const getEntriesWithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] =
     }
   })
 }
-export const addDiary = (newDiaryEntry: newDiaryEntry): DiaryEntry => {
+export const addDiary = (NewDiaryEntry: NewDiaryEntry): DiaryEntry => {
   const newDiary = {
     id: Math.max(...diaries.map(d => d.id)) + 1,
-    ...newDiaryEntry
+    ...NewDiaryEntry
   }
   diaries.push(newDiary)
   return newDiary
